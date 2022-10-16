@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <title>Free Machines</title>
+</head>
+<body>
+    <h1>Machines</h1>
+    {% if machines %}
+    <ul>
+        {% for machine in machines %}
+            {% if machine.is_free %}
+                <a href="/machine/{{ machine.id }}">{{ machine.name }}</a>
+                <br>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>Machines not avalible</p>
+    {% endif %}
+</body>
+</html>

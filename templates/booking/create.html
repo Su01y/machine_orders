@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Booking</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+</head>
+<body>
+    <h1>Create Booking</h1>
+    <form method='post' action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create Booking</button>
+    </form>
+</body>
+</html>
